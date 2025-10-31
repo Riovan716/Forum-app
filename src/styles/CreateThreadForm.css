@@ -1,0 +1,21 @@
+.create-thread-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.create-thread-form h2 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.create-thread-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+

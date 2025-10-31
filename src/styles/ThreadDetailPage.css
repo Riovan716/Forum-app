@@ -1,0 +1,160 @@
+.thread-detail {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.thread-detail .thread-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.thread-detail h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.thread-body {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.thread-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.thread-date {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.create-comment-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.comments-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.comment {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.comment-date {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.comment-content {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.vote-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: #283038;
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 80px;
+}
+
+.vote-count {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0.5rem 0;
+}
+
+.vote-buttons {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.vote-btn {
+  border: 2px solid;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.vote-btn-up {
+  border-color: #66BB6A;
+}
+
+.vote-btn-up:hover {
+  background: rgba(102, 187, 106, 0.2);
+}
+
+.vote-btn-down {
+  border-color: #E57373;
+}
+
+.vote-btn-down:hover {
+  background: rgba(229, 115, 115, 0.2);
+}
+
+.vote-btn-up.voted-up {
+  background: #66BB6A;
+  border-color: #66BB6A;
+}
+
+.vote-btn-down.voted-down {
+  background: #E57373;
+  border-color: #E57373;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
