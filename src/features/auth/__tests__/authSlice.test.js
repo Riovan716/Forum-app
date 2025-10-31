@@ -17,7 +17,7 @@
  *   - should handle loginUser.rejected action
  *   - should handle getOwnProfile.pending action
  *   - should handle getOwnProfile.fulfilled action
- *   - should handle getOwnProfile.rejected action
+ *   - should handle getOwnProfile.rejected action aaaa
  */
 
 import reducer, {
