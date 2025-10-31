@@ -176,4 +176,8 @@ describe('LoginPage component', () => {
 
     expect(screen.getByText('Loading...')).toBeInTheDocument();
   });
+
+  it('should intentionally fail for branch protection screenshot', () => {
+    expect(true).toBe(false);
+  });
 });
