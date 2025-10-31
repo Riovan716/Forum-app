@@ -15,7 +15,7 @@
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter, MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import ThreadCard from '../ThreadCard';
 
@@ -36,13 +36,11 @@ describe('ThreadCard component', () => {
     downVotesBy: [],
   };
 
-  const renderThreadCard = (thread = mockThread) => {
-    return render(
-      <MemoryRouter>
-        <ThreadCard thread={thread} />
-      </MemoryRouter>,
-    );
-  };
+  const renderThreadCard = (thread = mockThread) => render(
+    <MemoryRouter>
+      <ThreadCard thread={thread} />
+    </MemoryRouter>,
+  );
 
   it('should render thread information correctly', () => {
     renderThreadCard();
@@ -55,7 +53,7 @@ describe('ThreadCard component', () => {
 
   it('should navigate to thread detail page when clicked', async () => {
     const user = userEvent.setup();
-    const { container } = renderThreadCard();
+    renderThreadCard();
 
     const threadCard = screen.getByRole('button');
     await user.click(threadCard);
@@ -103,4 +101,3 @@ describe('ThreadCard component', () => {
     expect(screen.queryByText('John Doe')).not.toBeInTheDocument();
   });
 });
-

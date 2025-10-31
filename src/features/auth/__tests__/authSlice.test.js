@@ -29,14 +29,6 @@ import reducer, {
 } from '../authSlice';
 
 describe('authSlice reducer', () => {
-  const initialState = {
-    user: null,
-    token: null,
-    loading: false,
-    error: null,
-    isAuthenticated: false,
-  };
-
   beforeEach(() => {
     localStorage.clear();
   });

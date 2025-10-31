@@ -51,7 +51,7 @@ describe('authSlice thunk functions', () => {
       expect(result.payload).toBe('test-token-123');
       expect(localStorage.getItem('token')).toBe('test-token-123');
       expect(api.login).toHaveBeenCalledWith({ email: 'test@example.com', password: 'password123' });
-      
+
       const state = store.getState();
       expect(state.auth.token).toBe('test-token-123');
       expect(state.auth.isAuthenticated).toBe(true);
@@ -70,7 +70,7 @@ describe('authSlice thunk functions', () => {
       expect(result.type).toBe(loginUser.rejected.type);
       expect(result.payload).toBe('Invalid credentials');
       expect(localStorage.getItem('token')).toBeNull();
-      
+
       const state = store.getState();
       expect(state.auth.error).toBe('Invalid credentials');
       expect(state.auth.isAuthenticated).toBe(false);
@@ -110,7 +110,7 @@ describe('authSlice thunk functions', () => {
       expect(result.type).toBe(getOwnProfile.fulfilled.type);
       expect(result.payload).toEqual(mockUser);
       expect(api.getOwnProfile).toHaveBeenCalled();
-      
+
       const state = store.getState();
       expect(state.auth.user).toEqual(mockUser);
     });
@@ -140,4 +140,3 @@ describe('authSlice thunk functions', () => {
     });
   });
 });
-
