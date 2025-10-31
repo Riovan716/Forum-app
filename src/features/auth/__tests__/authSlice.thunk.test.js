@@ -15,8 +15,7 @@
  */
 
 import { configureStore } from '@reduxjs/toolkit';
-import { loginUser, getOwnProfile } from '../authSlice';
-import authReducer from '../authSlice';
+import authReducer, { loginUser, getOwnProfile } from '../authSlice';
 import api from '../../../services/api';
 
 // Mock the API service

@@ -20,8 +20,13 @@
  *   - should handle getOwnProfile.rejected action
  */
 
-import reducer, { logout, clearError } from '../authSlice';
-import { registerUser, loginUser, getOwnProfile } from '../authSlice';
+import reducer, {
+  logout,
+  clearError,
+  registerUser,
+  loginUser,
+  getOwnProfile,
+} from '../authSlice';
 
 describe('authSlice reducer', () => {
   const initialState = {
@@ -278,4 +283,3 @@ describe('authSlice reducer', () => {
     expect(localStorage.getItem('token')).toBeNull();
   });
 });
-
