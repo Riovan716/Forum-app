@@ -15,8 +15,7 @@
  */
 
 import { configureStore } from '@reduxjs/toolkit';
-import { fetchThreads, fetchThreadDetail } from '../threadsSlice';
-import threadsReducer from '../threadsSlice';
+import threadsReducer, { fetchThreads, fetchThreadDetail } from '../threadsSlice';
 import api from '../../../services/api';
 
 // Mock the API service
@@ -86,7 +85,7 @@ describe('threadsSlice thunk functions', () => {
       expect(result.payload[0]).toHaveProperty('owner');
       expect(result.payload[0].owner).toEqual(mockUsers[0]);
       expect(result.payload[1].owner).toEqual(mockUsers[1]);
-      
+
       const state = store.getState();
       expect(state.threads.threads).toHaveLength(2);
     });
@@ -107,7 +106,7 @@ describe('threadsSlice thunk functions', () => {
 
       expect(result.type).toBe(fetchThreads.rejected.type);
       expect(result.payload).toBe('Failed to fetch data');
-      
+
       const state = store.getState();
       expect(state.threads.error).toBe('Failed to fetch data');
     });
@@ -185,7 +184,7 @@ describe('threadsSlice thunk functions', () => {
       expect(result.type).toBe(fetchThreadDetail.fulfilled.type);
       expect(result.payload).toEqual(mockThreadDetail);
       expect(api.getThreadDetail).toHaveBeenCalledWith('thread-1');
-      
+
       const state = store.getState();
       expect(state.threads.threadDetail).toEqual(mockThreadDetail);
     });
@@ -215,4 +214,3 @@ describe('threadsSlice thunk functions', () => {
     });
   });
 });
-

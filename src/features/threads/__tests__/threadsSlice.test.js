@@ -31,8 +31,10 @@ import reducer, {
   optimisticDownVoteThread,
   optimisticUpVoteComment,
   optimisticDownVoteComment,
+  fetchThreads,
+  fetchThreadDetail,
+  createThread,
 } from '../threadsSlice';
-import { fetchThreads, fetchThreadDetail, createThread } from '../threadsSlice';
 
 describe('threadsSlice reducer', () => {
   const initialState = {
@@ -324,4 +326,3 @@ describe('threadsSlice reducer', () => {
     expect(newState.threads[0]).toEqual(newThread);
   });
 });
-

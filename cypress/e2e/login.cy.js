@@ -47,8 +47,8 @@ describe('Login Flow', () => {
 
     // Enter valid credentials
     // Replace with actual test credentials from your API
-    cy.get('input[type="email"]').type('testuser@example.com');
-    cy.get('input[type="password"]').type('testpassword123');
+    cy.get('input[type="email"]').type('riovansihombing3@gmail.com');
+    cy.get('input[type="password"]').type('riovan123');
     cy.get('button[type="submit"]').click();
 
     // Wait for successful login (redirect to home page)
@@ -62,8 +62,8 @@ describe('Login Flow', () => {
     cy.visit('/login');
 
     // Assuming login will succeed
-    cy.get('input[type="email"]').type('testuser@example.com');
-    cy.get('input[type="password"]').type('testpassword123');
+    cy.get('input[type="email"]').type('riovansihombing3@gmail.com');
+    cy.get('input[type="password"]').type('riovan123');
     cy.get('button[type="submit"]').click();
 
     // Should be redirected to home page
@@ -76,8 +76,8 @@ describe('Login Flow', () => {
   it('should persist login state after page reload', () => {
     // First, login
     cy.visit('/login');
-    cy.get('input[type="email"]').type('testuser@example.com');
-    cy.get('input[type="password"]').type('testpassword123');
+    cy.get('input[type="email"]').type('riovansihombing3@gmail.com');
+    cy.get('input[type="password"]').type('riovan123');
     cy.get('button[type="submit"]').click();
 
     // Wait for login to complete

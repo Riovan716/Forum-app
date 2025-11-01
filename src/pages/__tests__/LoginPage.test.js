@@ -14,14 +14,18 @@
  */
 
 import React from 'react';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitFor,
+  fireEvent,
+} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import configureMockStore from 'redux-mock-store';
 import userEvent from '@testing-library/user-event';
 import LoginPage from '../LoginPage';
-import { loginUser } from '../../features/auth/authSlice';
 import authReducer from '../../features/auth/authSlice';
 import api from '../../services/api';
 
@@ -85,7 +89,7 @@ describe('LoginPage component', () => {
 
   it('should call loginUser action on form submit', async () => {
     const user = userEvent.setup();
-    
+
     // Setup mock API before creating store
     api.login.mockResolvedValue({
       status: 'success',
@@ -108,12 +112,11 @@ describe('LoginPage component', () => {
 
     const emailInput = screen.getByLabelText(/email/i);
     const passwordInput = screen.getByLabelText(/password/i);
-    const submitButton = screen.getByRole('button', { name: /login/i });
 
     // Fill in the form
     await user.type(emailInput, 'riovansihombing3@gmail.com');
     await user.type(passwordInput, 'riovan123'); // Use longer password to pass minLength validation
-    
+
     // Get the form element and submit it
     const form = emailInput.closest('form');
     fireEvent.submit(form);
@@ -123,7 +126,7 @@ describe('LoginPage component', () => {
       const state = realStore.getState();
       expect(state.auth.loading).toBe(true);
     }, { timeout: 3000 });
-    
+
     // Verify API was called
     expect(api.login).toHaveBeenCalledWith({
       email: 'riovansihombing3@gmail.com',
@@ -175,5 +178,9 @@ describe('LoginPage component', () => {
     });
 
     expect(screen.getByText('Loading...')).toBeInTheDocument();
+  });
+
+  it('should intentionally fail for branch protection screenshot', () => {
+    expect(true).toBe(false);
   });
 });
